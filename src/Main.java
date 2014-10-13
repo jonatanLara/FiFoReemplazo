@@ -27,7 +27,8 @@ public class Main {
         Fifo fifo= new Fifo(3);
         for (int i = 0; i < secuncia.length(); i++) {
             fifo.Insertar(secuncia.charAt(i));
-            System.out.println(fifo.impimir());
+            System.out.print(fifo.impimir()+"\t");
+            
             
              }
         

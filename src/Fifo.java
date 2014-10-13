@@ -14,6 +14,7 @@ public class Fifo {
     char dato;
     char matriz[];
     int marco;
+    int fallo;
     
     
     public Fifo(int x){
@@ -29,20 +30,21 @@ public class Fifo {
         if (frente==null) {
             nuevo = new Nodo(x, null);
             frente = ultimo = nuevo;
-            InsertarM(x);
+            InsertarM(x);System.out.print("*");
+            
         }else{
             if (Existe(x)) {
                 //no hace nada
             }else{
                 if (Tamaaño()) {
-                    InsertarM(x);
+                    InsertarM(x);System.out.print("*");
                     nuevo= new Nodo(x, null);
                     ultimo.sig=nuevo;
                     ultimo=nuevo;
                     
                 }else{
                     SacarM(Sacar());
-                    InsertarM(x);
+                    InsertarM(x);System.out.print("*");
                     nuevo = new Nodo(x, null);
                     ultimo.sig= nuevo;
                     ultimo=nuevo;
@@ -58,9 +60,10 @@ public class Fifo {
         while(ban){
             if (matriz[i]==' ') {
                 matriz[i]=x;
-               
+              
                 ban=false;
             }i++;
+            
           }
        
     }
@@ -112,4 +115,5 @@ public class Fifo {
         }
         return salida;
     }
+   
 }
